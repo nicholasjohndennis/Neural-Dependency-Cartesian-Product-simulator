@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>NxN Documentation</title>
+<style>
+body {
+text-align:center;
+}
+h1   {}
+p    {
+text-align:left;
+}
+</style>
+<body>
+<h3>Neural Dependency Cartesian Product (NxN) documentation revision 0</h3>
+    <p>
+A Neurocybernetic model for systems of neurons is proposed, derived by forming the Cartesian product of the neurons by the neurons, denoted NxN.
+</p><p>
+This gives an n by n table, where n is the number of neurons in the system.
+Considering the system as a state machine, some cells accommodate the states of the neurons, but more importantly, there are cells providing for the state of the synaptic dependency of each neuron on every other neuron.
+<br>In this way, NxN models neurons at the systemic level, not just the states of some of the individual neurons in the system.
+</p><p>
+One cybernetic function performed by an algorithm operating on the NxN data structure is to <i>remember the paths the neuron inputs take through the input configuration space</i>
+</p><p>
+The NxN model was conceived and developed by Nicholas John Dennis, commencing July, 2021.
+</p>
+<h4>Contents</h4>
+<a href="#The Dependency Cartesian product">The Dependency Cartesian product</a>
+<br>
+<a href="#Neurocybernetics">Neurocybernetics</a>
+<br>
+<a href="#Neural system Abstraction">Neural system Abstraction</a>
+<br>
+<a href="#Neural Dependency Cartesian Product">Neural Dependency Cartesian Product</a>
+<br>
+<a href="#Operation">Operation</a>
+<br>
+<a href="#License">License</a>
+
+<h4 id="The Dependency Cartesian product">The Dependency Cartesian product</h4>
+    <p>
+One way to analyze the behaviour of any system E of elements, numbered E[1...n], is to consider the Cartesian product of the elements with those same elements, denoted ExE.
+This is formed as an inhererently 2-dimensional space, with the elements as values in each dimension, regardless of any dimensionality in the underlying system. 
+<br>When the elements are discreet, as in a atate machine, the space can be visualized as a table.
+</p>
+<img src="ExE.png" alt="ExE">
+<p>
+The diagonal ExE[i,i] contains the state of E[i].
+<br>For a Dependency product, cell ExE[i,j], i&#8800;j, contains the dependency D[i,j] of E[j] on E[i]. 
+<br>The behaviour of the system is modelled by characterizing the dependency of each element on the other elements.
+</p><p>
+The dependencies each have a direction.
+ By convention, the rows of the i dimension are the elements as providers of a dependency, and the columns of the j dimension are the elements as recipients of a dependency. In other words, the dependency D[i,j] is from E[i] to E[j].
+<br>Each row i represents dependencies from element E[i] to the other elements.
+<br>Each column j represents dependencies from the other elements to element E[j].
+<br>There is a symmetry across the diagonal where the dependency D[i,j] is a converse of the dependency D[j,i] in some sense.
+</p><p>
+For example, the Cartesian product of a hypothetical family looks like this:
+</p>
+<img src="family.png" alt="family">
+    <p>
+The diagonal of this Cartesian product is not used.
+<br>dependency 1 is read as Alice is Bob's wife or Bob's wife is Alice.
+<br>dependency 2 is read as Bob is Alice's husband, or Alice's husband is Bob
+</p><p>
+<!-- Another example is the Cartesian product of spacetime used in Einstein's derivation of General Relativity. -->
+</p>
+
+<h4 id="Neurocybernetics">Neurocybernetics</h4>
+    <p>
+After half a billion years of using neural systems to process sensory information and control behaviour, Nature has evolved something like this:
+</p>
+<!-- https://commons.wikimedia.org/wiki/File:Cajal_cortex_drawings.png#file -->
+<img src="Cajal_cortex_drawings.png" alt="Cajal_cortex_drawings">
+    <p>
+The image is of a microscopic piece of the Cerebral Cortex of the brain. Morphologically, this neural system is a convoluted sheet covering the top of the brain. It's so thin that it would look 2 dimensional if laid flat. The neurons have a high degree of uniformity, both in morphology and operation.
+<br>
+The neurons themselves implement elemental cybernetic functions, so the neual model of the behaviour of the complex objects and dynamics of reality only emerges from the systemic behaviour of the aggregate underlying neurons.
+<br>
+The question is, what to remember.
+Perhaps this system uses patterns of synaptic plasticity to maintain a Dependency Cartesion Product of reality.
+</p><p>
+Neuroscience is the study of biological neural systems, while Cybernetics is the study of synthesized models of control systems.
+<br>
+Neurocybernetics (also known as computational neuroscience, theoretical neuroscience or mathematical neuroscience), is the convergent study of symmetries between neural systems considered as control systems and cybernetic models.
+The goal is to find mappings between neural systems and synthetic models where both perform the same cybernetic function.
+<br>
+When a mapping is found, the neural and synthetic systems may be considered, as state machines, to be boundary-equivalent biological and synthetic implemetations of that cybernetic function.
+</p><p>
+One way to find a mapping is to study individual neurons to dedeuce the function of a neural system as a cybernetic control mechanism.
+<br>
+Another is to propose a hypothetical cybernetic model that could map to a system of natural neurons.
+</p>
+<h4 id="Neural system Abstraction">Neural system Abstraction</h4>
+    <p>
+A hypothetical model will be more tenable if each element of the model's data structure maps to a natural neuron component.
+<br>The data structure for this model is formed as an abstraction of a natural neural system by a series of rearrangements of the model data elements, so preserving the mapping of natural neural components to model data elements.
+</p><p>
+First, untangle three of the neurons. Collapse the multiple inputs, outputs, and interconnections between them each into a single entity in the model. Arrange the model elements vertically into input, interconnection, and output segments. 
+</p>
+<img src="1 system.png" alt="system of neurons">
+    <p>
+Extract a single neuron with it's pre and post synapses. Model it's inputs and ouputs with connections to the neuron being implied by their being directly below and above the neuron.
+</p>
+<img src="2 neuron.png" alt="a neuron">
+    <p>
+Rename the neuron's post and pre synapses to In and Out synapses repectively.
+<br>
+Arrange the neuron components into the cells of a table, such that the neuron's synaptic inputs are in the same row as the neuron, and the neuron's synaptic outputs are in the same column.
+</p>
+<img src="3 tabular neuron.png" alt="tabular neuron">
+    <p>
+Add another neuron to the model, displaced 2 rows down and 2 columns to the right of the first neuron.
+<br>Now the neurons lie on a diagonal of the table,
+<br>Also, the in and out synapses of the first neuron overlap the out and in synapses, respectively, of the second. The overlaps represent the dependency of each neuron on the other.
+</p>
+<img src="4 two neurons.png" alt="2 tabular neurons">
+    <p>
+There is a square shape implied by the diagonal of neuron bodies. Move the outlying synapses
+</p>
+<img src="5 square.png" alt="square">
+    <p>
+inside the square.
+</p>
+<img src="6 split synapse.png" alt="split synapse">
+    <p>
+To form a table.
+Continue adding neurons and interconnecting synapses until the table has as many neurons as required.
+<br>Then split the cells representing synapses into halves.
+<br>The upper half represents the synaptic input to the neuron in that row.
+<br>The lower half represents the synaptic out from the neuron in that column.
+</p><p>
+This is the NxN data structure for 6 neurons.
+</p>
+
+<h4 id="Neural Dependency Cartesian Product">Neural Dependency Cartesian Product</h4>
+<img src="7 nav.png" alt="nav">
+    <p>
+Each neuron, and it's input, and output, and it's synaaptic inputs and outputs are numbered.
+<br>Neuron 3 is selected, shown by the background of the table cells modelling this neuron's input, body, synaptic inputs and outputs, and output being colored blue.
+<br>Also, one synapse, representing the dependency from neuron 1 to neuron 5, is selected, shown by the background of table cells modelling this synapse and the from and to neurons of the dependency being colored brown. 
+</p>
+
+<h4 id="Operation">Operation</h4>
+<p>
+This shows the flow of data through the model for neuron 3, which:
+</p>
+<img src="8 data.png" alt="data">
+    <p>
+<br>1) receives a signal from it's input, and changes state accordingly.
+<br>2) detects the state of it's synaptic inputs, and changes state according to a function of the neuron state and each of the synaptic input states.
+<br>3) sets each of it's synaptic output states according to a function of the neuron state and the synaptic output state.
+<br>4) sets the output state according to the neuron state.
+</p><p>
+A software NxN simulator was built to experiment with inputs acting via algorithms on the NxN data structure.
+<br>The complex biochemistry of natural systems is abstracted to simple numerical state values for the modelled neurons and synapses. 
+</p><p>
+The simulator is driven by the input generator.
+Each input can be named to associate it with a real object.
+The generator contains the actual dynamics of the inputs within the input configuration space.
+Each row contains the state of the inputs at a specific step of the dynamics.
+The input dynamics are presented to the simulator engine by consecutively applying the input generator rows.
+<br>The simulator engine approximates the parallel operation of neural systems by scanning the table cells, and presenting state information relevent to that cell to an algorithm.
+<br>The algorithm applies simple transforms to the neuron and synapse states uniformly, analogous to elementary neural functions.
+</p><p>
+As an example, the simulator inputs are named alphabetically with a limited baking wordset.
+The configuration space of this wordset is the set of all sequences of the words.
+<br>Recipes don't use ingrediants in alpabetical order, so the input generator is set to present words in the order they would occur in a recipe to the simulator.
+<br>The generator steps are applied in sequence to complete the recipe, during which the algorithm potentiates some synaptic inputs by setting their state to 2.
+</p>
+<img src="9 pattern.png" alt="pattern">
+    <p>
+The potentiations occur in a particular pattern.
+Each potentiation is a step of the path through the input configuration space taken by the recipe.
+The path is shown by the red (neuron to synaptic output) and green (synaptic input to neuron) arrows.
+</p><p>
+<i>The neurocybernetic function implemented by this algorithm on the NxN data structure is to remeber the path the input takes through the input configuration space.</i>
+</p><p>
+Anyone examining the biological behaviour of individual neurons might not recognize this pattern, although some pairs of neurons would seem to be associative.
+<br>Only if the neural system were <i>presumed</i> to be an implementation of NxN would the synaptic patterns of the system be comprehensible.
+However, it remains to discover a system of neurons with synaptic behaviour matching this model.
+</p>
+<h4 id="License">License</h4>
+<p>
+This is free and unencumbered work released into the public domain.
+<br>Anyone is free to copy, modify, publish, use, compile, sell, or distribute this work for any purpose, commercial or non-commercial, and by any means.
+<br>In jurisdictions that recognize copyright laws, the author or authors of this work dedicate any and all copyright interest in the work to the public domain.  We make this dedication for the benefit of the public at large and to the detriment of our heirs and successors.  We intend this dedication to be an overt act of relinquishment in perpetuity of all present and future rights to this work under copyright law.
+<Br>The work is provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantbility, fitness for a particular purpose and noninfringement, in no event shall the authors be liable for any claim, damages, or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the work or the use or other dealings in the work.
+</p>
+</body>
+</html>
