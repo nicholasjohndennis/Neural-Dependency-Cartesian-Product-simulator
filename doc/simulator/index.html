@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>NxN Documentation</title>
+<title>NxN Simulator how-to</title>
 <style>
 body {
 text-align:center;
@@ -12,15 +12,42 @@ text-align:left;
 }
 </style>
 <body>
-<h3>NxN Simulator how-to revision 0</h3>
+<h3>NxN Simulator how-to</h3>
 <p>
-to do
+This shows a diagram of the simulator components and state dependencies between them.
+</p>
+<img src="block.png" alt="block">
+<h4 id="Operation">Operation</h4>
+Setup
+<p>
+0) when index.html is clicked, the GUI shows inputs where the user can specify the layout parameters.
+<br>1) When the Generate button is clicked, the driver Layout generator is called, which
+<br>2) sets up the NxN data structure, neuron outputs and Input Generator as html elements, according to the specified layout parameters.
+</p>
+Navigation
+<p>
+3) as the mouse is moved over a GUI NxN element,
+<br>4) the driver Navigation code is called to highlight the element and it's associated elements.
+</p>
+Simulation
+<p>
+5) edit Names for the inputs.
+<br>6) edit the rows of the Input Generator each with a pattern of input values, so the rows represent the dynamics of the Inputs.
+<br>On the left,
+<br>7) Apply the Input Generator rows in sequence, so the Input dynamics are presented to NxN.
+<br>Each Apply calls the Engine, which:
+<br>- copies the generator input pattern to the NxN neurons.
+<br>- then emulates the parallel operation of natural neural systems by making 2 passes over the NxN, scanning all the synapses on each pass
+and calling the Algorithm module for each synapse. This emulates the uniformity of operation of the neurons in a natural neural systems.
+<br>- the Algorithm sets the states of the input and output sides of the synapse.
+</p><p>
+<br> Click the Reset button to set the Output, NxN and Input Generator values to null. 
 </p>
 <h4 id="License">License</h4>
 <p>
 MIT License
 <br>
-Copyright (c) 2021 nicholasjohndennis
+Copyright (c) 2021 Nicholas John Dennis
 <br>
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

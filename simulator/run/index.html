@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>NxN simulator</title>
+<style>
+ html, body
+,div, span, input
+,table, caption, tbody, tfoot, thead, tr, th, td
+{
+ margin: 0px
+;padding: 0px
+;border: 0px
+;text-align:center
+}
+body {
+ background-color:rgb(180, 180, 180)
+}
+table { 
+ border-spacing: 10px
+} 
+.button {
+  padding: 2px
+; border: 1px solid black
+; border-radius: 8px
+; text-align: center
+;}
+.button:hover {
+  background-color: LightGreen
+;}
+</style>
+
+</head>
+
+<body>
+<h3 align=center>Neural Dependency Cartesian Product (NxN) Simulator</h3>
+Number of Neurons <input type="text" id="nneurons" style="width:40px;" value="5">
+ Input steps <input type="text" id="ngen" style="width:40px;" value="5">
+<input type="button" class="button" id="generate" value="Generate" style="width:80px;" onclick="lay_gen()" >
+	<table>
+	<tr>
+<td style="background-color:#ff99cc;">Outs</td><td align=left><table id="outs"></table></td>
+	</tr><tr>
+<td style="background-color:#ffff00;writing-mode: vertical-lr;">Interconnects  </td><td align=left><table id="NxN"></table></td>
+	</tr><tr>
+<td  style="background-color:#66ff66;writing-mode: vertical-lr;">Input generator</td><td align=left><table id="gen" ></table></td>
+	</tr><tr>
+	<td></td><td><input type="button" class="button" style="background-color: Pink;" value="Reset" onclick="lay_reset()" >	</td>
+	</tr><tr>
+<td  style="background-color:#66ff66;writing-mode: vertical-lr;">Names</td><td align=left><table id="names" ></table></td>
+	</tr>
+	</table>
+<br>
+<script type="text/javascript">
+var outs = document.getElementById( 'outs' ) ;
+var NxN = document.getElementById( 'NxN' ) ;
+var gen = document.getElementById( 'gen' ) ;
+</script>
+<script src="layout.js"></script>
+<script src="nav.js"></script>
+<script src="algs\follower.js"></script>
+<script src="engine.js"></script>
+<h4 id="License">License</h4>
+<p>
+MIT License
+<br>
+Copyright (c) 2021 Nicholas John Dennis
+<br>
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+<br>
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+<br>
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+</p>
+</body>
+</html>
