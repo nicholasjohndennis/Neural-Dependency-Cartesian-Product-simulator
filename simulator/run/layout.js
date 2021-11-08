@@ -21,14 +21,13 @@ var showcolorin     = '#66ff66' ;
 
 var mouseactover = 1 , mouseactout = 2  , mouseactclick = 3 ;
 
-var eneuron , eneuronin , eneuronout , eout , egen ;
-var esyn , esynin , esynout ;
-var outsum ;
+var egen ;
 
 var Nclicked ;
 var synclicked ;
 var showcolorselneuron = 'rgb(0%, 0%, 100%)' ;
 var showcolorselsyn    = 'rgb(128, 64, 0)' ;
+var alg ;
 
 function lay_gen(){
 document.getElementById( 'nneurons' ).disabled = true ;
@@ -38,6 +37,9 @@ nneurons = Number( document.getElementById( 'nneurons' ).value ) ;
 ngen = Number( document.getElementById( 'ngen' ).value ) ;
 Nclicked = new Array( nneurons ).fill( false ) ;
 synclicked = Array.from( Array( nneurons ), () => new Array( nneurons ).fill( false )) ;
+
+alg = algfollower ;
+
 var row , cell ;
 // outs
 	row = outs.insertRow( -1 ) ;
@@ -139,7 +141,16 @@ value="Apply" onclick="genapply('+igen+')" \
 ">' ;
 		}
 }
-function lay_reset(){
+
+function genapply( igen ){
+		for( ineuron = 0 ; ineuron < nneurons ; ineuron ++ ){
+		egen = gen.rows[ igen ].cells[ ineuron ].childNodes[ 0 ] ;
+		NxN.rows[ ineuron ].cells[ ineuron ].childNodes[ 0 ].value = egen.value ;
+		}
+	alg.apply() ;
+}
+
+function nxn_reset(){
 		for( ineuron = 0 ; ineuron < nneurons ; ineuron ++ ){
 		outs.rows[ 0 ].cells[ ineuron ].childNodes[ 0 ].value = '' ;
 			for( jneuron = 0 ; jneuron < nneurons ; jneuron ++ ){
@@ -151,9 +162,12 @@ function lay_reset(){
 				}
 			}
 		}
+}
+function lay_reset(){
 		for( igen = 0 ; igen < ngen ; igen ++ ){
 			for( ineuron = 0 ; ineuron < nneurons ; ineuron ++ ){
 			gen.rows[ igen ].cells[ ineuron ].childNodes[ 0 ].value = '' ;
 			}
 		}
+	nxn_reset() ;
 }

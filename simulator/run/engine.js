@@ -1,40 +1,58 @@
+// algs for emulating the parallel operation of neural systems.
 
-function nxntrace( alg ){ alg.trace() ; }
+// 1) scan
+// The NxN neurons and synapses are scanned top left to bottom right
+// pointing these variables
+var
+// if currently scanning a
+//              neuron      synapse
+  eneuronin  // the neuron  the neuron connected to input synapse  
+, eneuronout // the neuron  the neuron connected to output synapse
+// the output of 
+, eoutin     // the neuron  the neuron connected to input synapse
+, eoutout    // the neuron  the neuron connected to output synapse
+, esyn       // null        the synapse
+, esynin     // null        the synaptic input
+, esynout    // null        the synaptic output
+;
+// to the currently scanned NxN html elements
+// then calling the transform alg for the neuron or synapse.
 
-var iphase , nphase =2 , iphaseneuron = 0 , iphasesyn = 1 ;
 function nxnscan( alg ){
-		for( icol = 0 ; icol < nneurons ; icol ++ ) outs.rows[ 0 ].cells[ icol ].childNodes[ 0 ].value = '' ;
-		for( iphase = 0 ; iphase < nphase ; iphase ++ ){
-			for( irow = 0 ; irow < nneurons ; irow ++ ){
-			eneuronin = NxN.rows[ irow ].cells[ irow ].childNodes[ 0 ] ;
-				for( icol = 0 ; icol < nneurons ; icol ++ ){
-					if( irow != icol ){
-					eneuronout = NxN.rows[ icol ].cells[ icol ].childNodes[ 0 ] ;
-					esyn = NxN.rows[ irow ].cells[ icol ] ;
-					esynin  = esyn.childNodes[ isynin ].childNodes[ 0 ] ;
-					esynout = esyn.childNodes[ isynout ].childNodes[ 0 ] ;
-						switch( iphase ){
-						case iphaseneuron :
-						alg.tranneuron() ;
-						break;case iphasesyn :
-						alg.transyn() ;
-						break;default:
-						}
-					}
+		for( irow = 0 ; irow < nneurons ; irow ++ ){
+		eneuronin = NxN.rows[ irow ].cells[ irow ].childNodes[ 0 ] ;
+		eoutin = outs.rows[ 0 ].cells[ irow ].childNodes[ 0 ] ;
+			for( icol = 0 ; icol < nneurons ; icol ++ ){
+			eneuronout = NxN.rows[ icol ].cells[ icol ].childNodes[ 0 ] ;
+			eoutout = outs.rows[ 0 ].cells[ icol ].childNodes[ 0 ] ;
+				if( irow == icol ){
+				esyn = '' ;
+				esynin  = '' ;
+				esynout = '' ;
+				}else{
+				esyn = NxN.rows[ irow ].cells[ icol ] ;
+				esynin  = esyn.childNodes[ isynin ].childNodes[ 0 ] ;
+				esynout = esyn.childNodes[ isynout ].childNodes[ 0 ] ;
 				}
+			alg.xform() ;
 			}
 		}
 }
 
-var algsscan = [ algfollowerscan ] ;
-var ialg = 0 ;
-function genapply( igen ){
-		for( ineuron = 0 ; ineuron < nneurons ; ineuron ++ ){
-		egen = gen.rows[ igen ].cells[ ineuron ].childNodes[ 0 ] ;
-		NxN.rows[ ineuron ].cells[ ineuron ].childNodes[ 0 ].value = egen.value ;
-		}
-	nxnscan( algsscan[ ialg ] ) ;
-}
+// 2) trace nyi, but concept is used in navigational functions
+function nxntrace( alg ){}
 
-function reset(){
+// 3) other. tbd
+
+// helpers
+// for converting to/from undefined, null, zero
+function z2n( val ){
+	var nval = Number( val ) ;
+return nval ? nval : ''
+}
+function u2n( val ){
+return typeof val === 'undefined' ? '' : val ;
+}
+function u2z( val ){
+return typeof val === 'undefined' ? 0 : val ;
 }

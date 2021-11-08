@@ -1,0 +1,29 @@
+https://github.com/nicholasjohndennis/Neural-Dependency-Cartesian-Product-simulator
+- delete, copy in local rev 157
++ r 10
+- add topics
+neuroscience
+computational-neuroscience
+theoretical-neuroscience
+neuron-models
+machine-learning
+neurocybernetics
++++ 12
+- fix copyrights and use html copyright signs
+- remove Revision.txt, use svn rev instead
+- add this log
+
+-- simulator
+-- fix cosmetics
+-- add engine reset
+-- some reorg prep for alg selection
+-- add template folder
+
+--- engine
+--- add some comments
+--- move phasing to alg
+--- move neuron/synapse detection to alg
+--- move some undef/null/zero conversions from alg to engine helpers
+
+---- alg follower
+---- add new dependency output

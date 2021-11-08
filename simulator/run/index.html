@@ -38,9 +38,11 @@ Number of Neurons <input type="text" id="nneurons" style="width:40px;" value="5"
 <input type="button" class="button" id="generate" value="Generate" style="width:80px;" onclick="lay_gen()" >
 	<table>
 	<tr>
-<td style="background-color:#ff99cc;">Outs</td><td align=left><table id="outs"></table></td>
+<td style="background-color:#ff99cc;writing-mode: vertical-lr;">Outs</td><td align=left><table id="outs"></table></td>
 	</tr><tr>
-<td style="background-color:#ffff00;writing-mode: vertical-lr;">Interconnects  </td><td align=left><table id="NxN"></table></td>
+<td style="background-color:#ffff00;writing-mode: vertical-lr;">NxN</td><td align=left><table id="NxN"></table></td>
+	</tr><tr>
+	<td></td><td><input type="button" class="button" style="background-color: Pink;" value="Reset" onclick="nxn_reset()" >	</td>
 	</tr><tr>
 <td  style="background-color:#66ff66;writing-mode: vertical-lr;">Input generator</td><td align=left><table id="gen" ></table></td>
 	</tr><tr>
@@ -55,16 +57,15 @@ var outs = document.getElementById( 'outs' ) ;
 var NxN = document.getElementById( 'NxN' ) ;
 var gen = document.getElementById( 'gen' ) ;
 </script>
+<script src="engine.js"></script>
+<script src="algs\follower.js"></script>
 <script src="layout.js"></script>
 <script src="nav.js"></script>
-<script src="algs\follower.js"></script>
-<script src="engine.js"></script>
-<h4 id="License">License</h4>
 <p>
+Copyright &copy; 2021 Nicholas John Dennis
+<br>
 MIT License
-<br>
-Copyright (c) 2021 Nicholas John Dennis
-<br>
+</p>
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
@@ -82,6 +83,5 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-</p>
 </body>
 </html>
